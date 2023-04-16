@@ -4,7 +4,10 @@
 }
 
 html {
-  background: linear-gradient(4deg, #979fa1 50%, #dfe8eb 50%);
+    background: linear-gradient(lightCyan, skyBlue);
+
+
+
   height: 100%;
 }
 body {
