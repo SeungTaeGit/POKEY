@@ -4,24 +4,26 @@
 }
 
 html {
-    background: linear-gradient(lightCyan, skyBlue);
-
-
+    background: linear-gradient(#E6E6FA, WHITE);
 
   height: 100%;
 }
 body {
   font: 14px/20px "Lato", Arial, sans-serif;
   padding: 0;
-  color: white;
   min-height: 100%;
+  margin-top: 70px;
 }
 
 .container {
   margin: 0 auto;
   width: 1250px;
-  background: #444753;
+  background: #FFFAFA;
   border-radius: 5px;
+  opacity: 0.8;
+  -webkit-box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.2);
+  -moz-box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.2);
+  box-shadow: 3px 3px 10px -1px rgba(0,0,0,0.2);
 }
 
 .people-list {
@@ -37,7 +39,8 @@ body {
   border: none;
   padding: 14px;
   color: white;
-  background: #6A6C75;
+  background: #E6E6FA;
+  opacity: 0.8;
   width: 90%;
   font-size: 14px;
 }
@@ -61,6 +64,9 @@ body {
 }
 .people-list .about {
   padding-left: 8px;
+}
+.people-list .name {
+  color: DARKGRAY;
 }
 .people-list .status {
   color: #92959E;
@@ -104,6 +110,21 @@ body {
   overflow-y: scroll;
   height: 583px;
 }
+.video .video-history::-webkit-scrollbar {
+    width: 10px;
+}
+.video .video-history::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+.video .video-history::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+
 .video .video-history .message-data {
   margin-bottom: 15px;
 }
@@ -146,6 +167,7 @@ body {
 }
 .video .video-message {
   padding: 30px;
+  height: 162px;
 }
 .video .video-message textarea {
   width: 100%;
@@ -176,15 +198,11 @@ body {
 }
 
 
-.video .toggle {
-  width: 500px;
-  height: 80px;
-  background-color: #b7bfc9;
-  display: table-cell;
-  vertical-align: middle;
-  padding-left: 40px;
+#footer .toggle {
+  display: flex;
+  align-items: center;
 }
-.video .toggle .togglebtn {
+#footer .toggle .togglebtn {
   margin-left: 30px;
   float: left;
 }
@@ -209,10 +227,10 @@ body {
   left: 4px;
   transform: translateY(-50%);
   border-radius: 50%;
-  background: #f03d3d;
+  background: #FFD2BF;
 }
 #togglech:checked ~ .toggleSwitch {
-  background: #f03d3d;
+  background: #FFD2BF;
 }
 
 #togglech:checked ~ .toggleSwitch .toggleButton {
@@ -224,7 +242,7 @@ body {
   transition: all 0.2s ease-in;
 }
 #togglech2:checked ~ .toggleSwitch {
-  background: #f03d3d;
+  background: #FFD2BF;
 }
 
 #togglech2:checked ~ .toggleSwitch .toggleButton {
@@ -277,6 +295,21 @@ body {
   overflow-y: scroll;
   height: 495px;
 }
+.chat .chat-history::-webkit-scrollbar {
+    width: 10px;
+}
+.chat .chat-history::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+.chat .chat-history::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+
 .chat .chat-history .message-data {
   margin-bottom: 15px;
 }
@@ -388,9 +421,12 @@ body {
 
 .info {
   text-align: right;
-  margin-right: 100px;
   color: #1f1e1e;
   font-size: 16px;
+  padding-right: 100px;
+  align-items: center;
+  display: flex;
+  float: left;
 }
 /*.info .logout {*/
 /*  !*background: url("../img/logout.png") no-repeat center;*!*/
@@ -447,9 +483,6 @@ body {
   -webkit-touch-callout: none;
 }
 
-/*
- * Just a quick hamburger
- */
 #menuToggle span
 {
   display: block;
@@ -519,13 +552,13 @@ body {
   margin: -197px 0 0 -50px;
   padding-left: 100px;
   padding-bottom: 180px;
-  background: #ededed;
+  background: WHITE;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 #menu li
@@ -629,4 +662,24 @@ body {
   background: #000;
   -webkit-transform: scale(1);
   transform: scale(1);
+}
+
+
+#footer {
+    position: fixed;
+    background-color: rgba(230, 230, 250, 0.5);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 110px;
+    display: flex;
+}
+#footer .footer {
+    float: left;
+}
+#footer .ft-toggle {
+    display: flex;
+    float: left;
+    margin: auto;
+    align-items: center;
 }
