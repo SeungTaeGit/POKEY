@@ -10,8 +10,8 @@
   <script src="/webjars/stomp-websocket/stomp.min.js"></script>
   <script src="/app.js"></script>
 
-  <script src="https://tistory3.daumcdn.net/tistory/941717/skin/images/jquery.min.js" type="text/javascript"></script>
-  <script src="https://tistory3.daumcdn.net/tistory/941717/skin/images/snowfall.jquery.js" type="text/javascript"></script>
+<!--  <script src="https://tistory3.daumcdn.net/tistory/941717/skin/images/jquery.min.js" type="text/javascript"></script>-->
+<!--  <script src="https://tistory3.daumcdn.net/tistory/941717/skin/images/snowfall.jquery.js" type="text/javascript"></script>-->
 </head>
 
 <body>
@@ -33,9 +33,9 @@
     <ul class="list">
       <li class="clearfix">
         <div class="about">
-          <div class="name">Talk for 4th Team</div>
+          <div class="name">Name</div>
           <div class="status">
-            <i class="fa fa-circle online"></i> online
+            <i class="fa fa-circle online"></i> useremail@naver.com
           </div>
         </div>
       </li>
@@ -319,24 +319,37 @@
     <div class="footer">
       <nav role="navigation">
         <div id="menuToggle">
-          <input type="checkbox" />
+          <input class="menuinput" type="checkbox" />
 
-          <span></span>
-          <span></span>
-          <span></span>
-          <ul id="menu">
-            <div class="menuroom">
-              <input class="roomin" type="text" required>
-              <label class="roomla">Room Name</label>
-              <span class="roomsp"></span>
+          <span class="menuspan"></span>
+          <span class="menuspan"></span>
+          <span class="menuspan"></span>
+          <div id="menu">
+<!--            <div class="menuroom">-->
+<!--              <input class="roomin" type="text" required>-->
+<!--              <label class="roomla">Room Name</label>-->
+<!--              <span class="roomsp"></span>-->
+<!--            </div>-->
+<!--            <div class="menuroom">-->
+<!--              <input class="roomin" type="text" required>-->
+<!--              <label class="roomla">Room passwd</label>-->
+<!--              <span class="roomsp"></span>-->
+<!--            </div>-->
+<!--            <button class="createroombtn" type="button">CREATE</button>-->
+            <div class="inputs">
+              <div class="group">
+                <input type="email" required class="logininput">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label class="loginlabel">Email</label>
+              </div>
             </div>
-            <div class="menuroom">
-              <input class="roomin" type="text" required>
-              <label class="roomla">Room passwd</label>
-              <span class="roomsp"></span>
+
+            <div class="wrap">
+              <button class="smbtn">+</button>
             </div>
-            <button class="createroombtn" type="button">CREATE</button>
-          </ul>
+
+          </div>
         </div>
       </nav>
     </div>

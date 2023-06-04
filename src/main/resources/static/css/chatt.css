@@ -467,7 +467,7 @@ body {
 }
 
 
-#menuToggle input
+#menuToggle .menuinput
 {
   display: block;
   width: 40px;
@@ -482,7 +482,7 @@ body {
   -webkit-touch-callout: none;
 }
 
-#menuToggle span
+#menuToggle .menuspan
 {
   display: block;
   width: 33px;
@@ -516,7 +516,7 @@ body {
  * Transform all the slices of hamburger
  * into a crossmark.
  */
-#menuToggle input:checked ~ span
+#menuToggle .menuinput:checked ~ span
 {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
@@ -526,7 +526,7 @@ body {
 /*
  * But let's hide the middle one.
  */
-#menuToggle input:checked ~ span:nth-last-child(3)
+#menuToggle .menuinput:checked ~ span:nth-last-child(3)
 {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
@@ -535,7 +535,7 @@ body {
 /*
  * Ohyeah and the last one should go the other direction
  */
-#menuToggle input:checked ~ span:nth-last-child(2)
+#menuToggle .menuinput:checked ~ span:nth-last-child(2)
 {
   transform: rotate(-45deg) translate(0, -1px);
 }
@@ -545,19 +545,20 @@ body {
  * at the top left of the screen
  */
 #menu {
-  position: absolute;
-  width: 260px;
-  height: 0px;
-  margin: -197px 0 0 -50px;
-  padding-left: 100px;
-  padding-bottom: 180px;
-  background: WHITE;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-  opacity: 0.8;
+    position: absolute;
+    height: 0px;
+    margin: -97px 0 0 -50px;
+    padding-bottom: 80px;
+    background: WHITE;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    opacity: 0.8;
+    width: 250px;
+    border-radius: 0px 25px 25px 0px;
+    box-shadow: 8px 3px 20px -1px rgba(0,0,0,0.2);
 }
 
 #menu li
@@ -565,25 +566,27 @@ body {
   padding: 10px 0;
   font-size: 22px;
 }
-
+.inputs {
+    float: left;
+    width: 150px;
+    margin-top: 15px;
+}
 /*
  * And let's slide it in from the left
  */
-#menuToggle input:checked ~ ul
+#menuToggle input:checked ~ div
 {
   transform: none;
 }
 #menuToggle button {
   outline: none;
-  width: 100px;
-  border: 2px solid #000;
+  width: 45px;
   font-family: 'Lato', sans-serif;
   font-weight: 500;
-  background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
-  margin-top: 30px;
+  margin-top: 5px;
   margin-left: 5px;
 }
 .createroombtn {
@@ -686,4 +689,149 @@ body {
 
 @media (max-width: 1440px) {
 
+}
+
+
+
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 13px;
+}
+
+.wrap .smbtn {
+    width: 80%;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin-top: 25px;
+}
+
+.wrap .smbtn:hover {
+    background-color: #CEC7E0;
+    box-shadow: 0px 15px 20px rgba(230, 230, 250, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+
+/* 로그인 폼 */
+/* form starting stylings ------------------------------- */
+.icons {
+    float: left;
+    padding-top: 7px;
+}
+.group 			  {
+    position: relative;
+    padding-left: 20px;
+}
+.logininput 				{
+    font-size: 12px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 170px;
+    border: none;
+    /* border-bottom: 1px solid #757575; */
+}
+.logininput:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+.loginlabel {
+    color: #999;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 15px;
+    top: 15px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+    padding-left: 20px;
+}
+
+/* active state */
+.logininput:focus ~ .loginlabel, .logininput:valid ~ .loginlabel 		{
+    top:-20px;
+    font-size:14px;
+    color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{
+    position:relative;
+    display:block;
+    width:88%;
+    margin-left: 7px;
+}
+.bar:before, .bar:after 	{
+    content:'';
+    height:2px;
+    width:0;
+    bottom:1px;
+    position:absolute;
+    background:#5264AE;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+}
+.bar:before {
+    left:50%;
+}
+.bar:after {
+    right:50%;
+}
+
+/* active state */
+.logininput:focus ~ .bar:before, .logininput:focus ~ .bar:after {
+    width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+    position:absolute;
+    height:60%;
+    width:100px;
+    top:25%;
+    left:0;
+    pointer-events:none;
+    opacity:0.5;
+    margin-left: 20px;
+}
+
+/* active state */
+.logininput:focus ~ .highlight {
+    -webkit-animation:inputHighlighter 0.3s ease;
+    -moz-animation:inputHighlighter 0.3s ease;
+    animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+    from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+    from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+    from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+}
+.login-form {
+    padding-left: 5%;
+    padding-top: 15px;
 }
